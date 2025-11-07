@@ -1,1 +1,86 @@
-# Get-well-soon
+# Get Well Soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gute Besserung Noëlle 💐</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #89CFF0, #FFB6C1); /* Blue to Pink */
+    overflow: hidden;
+    font-family: 'Pacifico', cursive;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 15px #ff6f91, 0 0 20px #ffd1dc;
+    animation: glow 2s infinite alternate, floatText 3s ease-in-out infinite;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+  }
+
+  @keyframes glow {
+    0% { text-shadow: 2px 2px 15px #ff6f91, 0 0 20px #ffd1dc; }
+    50% { text-shadow: 4px 4px 25px #ff6f91, 0 0 40px #ffd1dc; }
+    100% { text-shadow: 2px 2px 15px #ff6f91, 0 0 20px #ffd1dc; }
+  }
+
+  @keyframes floatText {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .petal {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Flower_icon.png') no-repeat center/contain;
+    animation: fall linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Gute Besserung Noëlle 💐</h1>
+
+<script>
+  // Create falling petals
+  const body = document.body;
+  const petalCount = 80;
+
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+    petal.style.opacity = Math.random();
+    petal.style.transform = `rotate(${Math.random()*360}deg)`;
+    body.appendChild(petal);
+  }
+</script>
+
+</body>
+</html>
